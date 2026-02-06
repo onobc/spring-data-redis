@@ -51,7 +51,7 @@ public interface ReactiveValueOperations<K, V> {
 	Mono<Boolean> set(K key, V value);
 
 	/**
-	 * Set {@code value} for {@code key} with expiration {@code expiration}.
+	 * Set {@code value} for {@code key} with {@code expiration}.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
@@ -72,7 +72,7 @@ public interface ReactiveValueOperations<K, V> {
 	Mono<Boolean> set(K key, V value, Duration timeout);
 
 	/**
-	 * Set the {@code value} and expiration {@code expiration} for {@code key}. Return the old string stored at key, or
+	 * Set the {@code value} and {@code expiration} for {@code key}. Return the old string stored at key, or
 	 * empty if key did not exist. An error is returned and SET aborted if the value stored at key is not a string.
 	 *
 	 * @param key must not be {@literal null}.
@@ -105,7 +105,7 @@ public interface ReactiveValueOperations<K, V> {
 	Mono<Boolean> setIfAbsent(K key, V value);
 
 	/**
-	 * Set {@code key} to hold the string {@code value} and expiration {@code expiration} if {@code key} is absent.
+	 * Set {@code key} to hold the string {@code value} and {@code expiration} if {@code key} is absent.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.

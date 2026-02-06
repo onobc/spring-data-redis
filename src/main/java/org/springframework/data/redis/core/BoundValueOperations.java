@@ -45,7 +45,7 @@ public interface BoundValueOperations<K, V> extends BoundKeyOperations<K> {
 	void set(@NonNull V value);
 
 	/**
-	 * Set {@code value} and expiration {@code expiration} for the bound key.
+	 * Set {@code value} and {@code expiration} for the bound key.
 	 *
 	 * @param value must not be {@literal null}.
 	 * @param expiration must not be {@literal null}.
@@ -58,7 +58,7 @@ public interface BoundValueOperations<K, V> extends BoundKeyOperations<K> {
 	 * Set the {@code value} and expiration {@code timeout} for the bound key.
 	 *
 	 * @param value must not be {@literal null}.
-	 * @param timeout
+	 * @param timeout must not be {@literal null}.
 	 * @param unit must not be {@literal null}.
 	 * @see <a href="https://redis.io/commands/set">Redis Documentation: SET</a>
 	 * @deprecated in favor of {@link #set(Object, Expiration)}
@@ -67,7 +67,7 @@ public interface BoundValueOperations<K, V> extends BoundKeyOperations<K> {
 	void set(@NonNull V value, long timeout, @NonNull TimeUnit unit);
 
 	/**
-	 * Set the {@code value} and expiration {@code expiration} for the bound key. Return the old string stored at key, or
+	 * Set the {@code value} and {@code expiration} for the bound key. Return the old string stored at key, or
 	 * {@literal null} if key did not exist. An error is returned and SET aborted if the value stored at key is not a
 	 * string.
 	 *
@@ -85,7 +85,7 @@ public interface BoundValueOperations<K, V> extends BoundKeyOperations<K> {
 	 * string.
 	 *
 	 * @param value must not be {@literal null}.
-	 * @param timeout
+	 * @param timeout must not be {@literal null}.
 	 * @param unit must not be {@literal null}.
 	 * @return {@literal null} when used in pipeline / transaction.
 	 * @see <a href="https://redis.io/commands/set">Redis Documentation: SET</a>
@@ -101,12 +101,12 @@ public interface BoundValueOperations<K, V> extends BoundKeyOperations<K> {
 	 * string.
 	 *
 	 * @param value must not be {@literal null}.
-	 * @param duration expiration duration
+	 * @param timeout must not be {@literal null}.
 	 * @return {@literal null} when used in pipeline / transaction.
 	 * @see <a href="https://redis.io/commands/set">Redis Documentation: SET</a>
 	 * @since 3.5
 	 */
-	V setGet(@NonNull V value, @NonNull Duration duration);
+	V setGet(@NonNull V value, @NonNull Duration timeout);
 
 	/**
 	 * Set the {@code value} and expiration {@code timeout} for the bound key.
@@ -134,7 +134,7 @@ public interface BoundValueOperations<K, V> extends BoundKeyOperations<K> {
 	Boolean setIfAbsent(@NonNull V value);
 
 	/**
-	 * Set the bound key to hold the string {@code value} and expiration {@code expiration} if the bound key is absent.
+	 * Set the bound key to hold the string {@code value} and {@code expiration} if the bound key is absent.
 	 *
 	 * @param value must not be {@literal null}.
 	 * @param expiration must not be {@literal null}.
@@ -148,7 +148,7 @@ public interface BoundValueOperations<K, V> extends BoundKeyOperations<K> {
 	 * Set the bound key to hold the string {@code value} and expiration {@code timeout} if the bound key is absent.
 	 *
 	 * @param value must not be {@literal null}.
-	 * @param timeout
+	 * @param timeout must not be {@literal null}.
 	 * @param unit must not be {@literal null}.
 	 * @return {@literal null} when used in pipeline / transaction.
 	 * @since 2.1
@@ -187,7 +187,7 @@ public interface BoundValueOperations<K, V> extends BoundKeyOperations<K> {
 	Boolean setIfPresent(@NonNull V value);
 
 	/**
-	 * Set the bound key to hold the string {@code value} and expiration {@code expiration} if the bound key is present.
+	 * Set the bound key to hold the string {@code value} and {@code expiration} if the bound key is present.
 	 *
 	 * @param value must not be {@literal null}.
 	 * @param expiration must not be {@literal null}.
@@ -201,7 +201,7 @@ public interface BoundValueOperations<K, V> extends BoundKeyOperations<K> {
 	 * Set the bound key to hold the string {@code value} and expiration {@code timeout} if the bound key is present.
 	 *
 	 * @param value must not be {@literal null}.
-	 * @param timeout the key expiration timeout.
+	 * @param timeout must not be {@literal null}.
 	 * @param unit must not be {@literal null}.
 	 * @return command result indicating if the key has been set.
 	 * @throws IllegalArgumentException if either {@code value} or {@code timeout} is not present.

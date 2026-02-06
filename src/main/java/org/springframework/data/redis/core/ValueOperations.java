@@ -52,7 +52,7 @@ public interface ValueOperations<K, V> {
 	void set(@NonNull K key, @NonNull V value);
 
 	/**
-	 * Set the {@code value} and expiration {@code expiration} for {@code key}. Return the old string stored at key, or
+	 * Set the {@code value} and {@code expiration} for {@code key}. Return the old string stored at key, or
 	 * {@literal null} if key did not exist. An error is returned and SET aborted if the value stored at key is not a
 	 * string.
 	 *
@@ -100,7 +100,7 @@ public interface ValueOperations<K, V> {
 	V setGet(@NonNull K key, @NonNull V value, @NonNull Duration duration);
 
 	/**
-	 * Set the {@code value} and expiration {@code timeout} for {@code key}.
+	 * Set the {@code value} and {@code expiration} for {@code key}.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
@@ -141,7 +141,7 @@ public interface ValueOperations<K, V> {
 	}
 
 	/**
-	 * Set {@code key} to hold the string {@code value} if {@code key} is absent.
+	 * Set the {@code value} for {@code key} if {@code key} is absent.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
@@ -151,7 +151,7 @@ public interface ValueOperations<K, V> {
 	Boolean setIfAbsent(@NonNull K key, @NonNull V value);
 
 	/**
-	 * Set {@code key} to hold the string {@code value} and expiration {@code timeout} if {@code key} is absent.
+	 * Set the {@code value} and {@code expiration} for {@code key} if {@code key} is absent.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
@@ -163,7 +163,7 @@ public interface ValueOperations<K, V> {
 	Boolean setIfAbsent(@NonNull K key, @NonNull V value, @NonNull Expiration expiration);
 
 	/**
-	 * Set {@code key} to hold the string {@code value} and expiration {@code timeout} if {@code key} is absent.
+	 * Set the {@code value} and expiration {@code timeout} for {@code key} if {@code key} is absent.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
@@ -178,7 +178,7 @@ public interface ValueOperations<K, V> {
 	Boolean setIfAbsent(@NonNull K key, @NonNull V value, long timeout, @NonNull TimeUnit unit);
 
 	/**
-	 * Set {@code key} to hold the string {@code value} and expiration {@code timeout} if {@code key} is absent.
+	 * Set the {@code value} and expiration {@code timeout} for {@code key} if {@code key} is absent.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
@@ -196,7 +196,7 @@ public interface ValueOperations<K, V> {
 	}
 
 	/**
-	 * Set {@code key} to hold the string {@code value} if {@code key} is present.
+	 * Set the {@code value} for {@code key} if {@code key} is present.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
@@ -208,7 +208,7 @@ public interface ValueOperations<K, V> {
 	Boolean setIfPresent(@NonNull K key, @NonNull V value);
 
 	/**
-	 * Set {@code key} to hold the string {@code value} and expiration {@code timeout} if {@code key} is present.
+	 * Set the {@code value} and {@code expiration} for {@code key} if {@code key} is present.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
@@ -220,7 +220,7 @@ public interface ValueOperations<K, V> {
 	Boolean setIfPresent(@NonNull K key, @NonNull V value, @NonNull Expiration expiration);
 
 	/**
-	 * Set {@code key} to hold the string {@code value} and expiration {@code timeout} if {@code key} is present.
+	 * Set the {@code value} and expiration {@code timeout} for {@code key} if {@code key} is present.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
@@ -236,7 +236,7 @@ public interface ValueOperations<K, V> {
 	Boolean setIfPresent(@NonNull K key, @NonNull V value, long timeout, @NonNull TimeUnit unit);
 
 	/**
-	 * Set {@code key} to hold the string {@code value} and expiration {@code timeout} if {@code key} is present.
+	 * Set the {@code value} and expiration {@code timeout} for {@code key} if {@code key} is present.
 	 *
 	 * @param key must not be {@literal null}.
 	 * @param value must not be {@literal null}.
